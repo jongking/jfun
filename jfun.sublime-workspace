@@ -1,0 +1,365 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"local",
+				"localhost"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 311.0,
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Install Package→安装程序包"
+			]
+		],
+		"width": 632.0
+	},
+	"console":
+	{
+		"height": 146.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/G/GitHub/phpwindv901/upload/wind/utility/WindPack.php",
+		"/G/GitHub/phpwindv901/upload/wind/Wind.php",
+		"/G/GitHub/phpwindv901/upload/src/windid/WindidApi.php",
+		"/G/GitHub/wordpress/wp-config-sample.php",
+		"/G/GitHub/ECShop/upload/wap/includes/init.php",
+		"/G/GitHub/ECShop/upload/admin/includes/init.php",
+		"/G/GitHub/ECShop/upload/index.php",
+		"/G/GitHub/ECShop/梦芭莎商城简洁版单独模版包(utf-8)/模板包/ecmoban_moonbasa/activity.dwt",
+		"/G/GitHub/ECShop/梦芭莎商城简洁版单独模版包(utf-8)/使用教程/单独模板包安装步骤.doc",
+		"/G/GitHub/ECShop/upload/demo/zh_tw.sql",
+		"/G/GitHub/phpcms/phpcms_v9_UTF8/install_package/phpcms/modules/admin/index.php",
+		"/G/GitHub/phpcms/phpcms_v9_UTF8/install_package/phpcms/modules/admin/functions/admin.func.php",
+		"/G/GitHub/phpcms/phpcms_v9_UTF8/install_package/phpcms/modules/video/classes/ku6api.class.php",
+		"/G/GitHub/phpcms/phpcms_v9_UTF8/install_package/phpcms/modules/admin/templates/index.tpl.php",
+		"/G/GitHub/phpcms/phpcms_v9_UTF8/install_package/phpcms/modules/admin/templates/main.tpl.php",
+		"/G/GitHub/phpcms/phpcms_v9_UTF8/install_package/phpcms/modules/admin/templates/map.tpl.php",
+		"/G/GitHub/phpcms/phpcms_v9_UTF8/install_package/phpcms/model/admin_model.class.php",
+		"/G/GitHub/phpcms/phpcms_v9_UTF8/install_package/caches/configs/route.php",
+		"/G/GitHub/phpcms/phpcms_v9_UTF8/install_package/phpcms/modules/member/classes/foreground.class.php",
+		"/G/GitHub/phpcms/phpcms_v9_UTF8/install_package/phpcms/model/position_data_model.class.php",
+		"/G/GitHub/phpcms/phpcms_v9_UTF8/install_package/phpcms/modules/content/classes/content_tag.class.php",
+		"/G/GitHub/phpcms/phpcms_v9_UTF8/install_package/phpcms/modules/admin/classes/sites.class.php",
+		"/G/GitHub/phpcms/phpcms_v9_UTF8/install_package/phpcms/modules/search/search_admin.php",
+		"/G/GitHub/phpcms/phpcms_v9_UTF8/install_package/phpcms/model/special_c_data_model.class.php",
+		"/G/GitHub/phpcms/phpcms_v9_UTF8/install_package/phpcms/libs/classes/model.class.php",
+		"/G/GitHub/phpcms/phpcms_v9_UTF8/install_package/phpcms/modules/content/fields/model.sql",
+		"/G/GitHub/phpcms/phpcms_v9_UTF8/install_package/phpcms/libs/classes/mysql.class.php",
+		"/G/GitHub/phpcms/phpcms_v9_UTF8/install_package/phpcms/modules/attachment/templates/album_dir.tpl.php",
+		"/G/GitHub/phpcms/phpcms_v9_UTF8/install_package/caches/caches_template/default/content/index.php",
+		"/G/GitHub/phpcms/phpcms_v9_UTF8/install_package/phpcms/libs/classes/db_factory.class.php",
+		"/G/GitHub/phpcms/phpcms_v9_UTF8/install_package/phpcms/libs/classes/db_access.class.php",
+		"/G/GitHub/phpcms/phpcms_v9_UTF8/install_package/caches/caches_commons/caches_data/model.cache.php",
+		"/G/GitHub/phpcms/phpcms_v9_UTF8/install_package/caches/configs/model_config.php",
+		"/G/GitHub/phpcms/phpcms_v9_UTF8/install_package/phpcms/modules/content/content.php",
+		"/G/GitHub/phpcms/phpcms_v9_UTF8/install_package/phpcms/modules/content/rss.php",
+		"/G/GitHub/phpcms/phpcms_v9_UTF8/install_package/caches/caches_model/caches_data/content_input.class.php",
+		"/G/GitHub/phpcms/phpcms_v9_UTF8/install_package/phpcms/modules/content/fields/fields.inc.php",
+		"/G/GitHub/phpcms/phpcms_v9_UTF8/install_package/statics/js/ckeditor/config.js",
+		"/G/GitHub/phpcms/phpcms_v9_UTF8/install_package/phpcms/libs/functions/dir.func.php",
+		"/G/GitHub/phpcms/phpcms_v9_UTF8/install_package/phpcms/modules/special/templates/import_content.tpl.php",
+		"/G/GitHub/phpcms/phpcms_v9_UTF8/install_package/phpcms/modules/content/templates/content_add.tpl.php",
+		"/G/GitHub/phpcms/phpcms_v9_UTF8/install_package/phpcms/modules/video/uninstall/video_content.sql",
+		"/G/GitHub/phpcms/phpcms_v9_UTF8/install_package/phpcms/modules/comment/install/templates/index.html",
+		"/G/GitHub/phpcms/phpcms_v9_UTF8/install_package/phpcms/modules/content/index.php",
+		"/G/GitHub/phpcms/phpcms_v9_UTF8/install_package/phpcms/modules/comment/install/index.html",
+		"/G/GitHub/phpcms/phpcms_v9_UTF8/install_package/phpcms/modules/comment/uninstall/index.html",
+		"/G/GitHub/phpcms/phpcms_v9_UTF8/install_package/phpcms/modules/comment/index.php",
+		"/G/GitHub/phpcms/phpcms_v9_UTF8/install_package/phpcms/modules/index.html",
+		"/G/GitHub/phpcms/phpcms_v9_UTF8/install_package/phpcms/modules/admin/templates/module_list.tpl.php",
+		"/G/GitHub/phpcms/phpcms_v9_UTF8/install_package/caches/configs/modules.php",
+		"/G/GitHub/phpcms/phpcms_v9_UTF8/install_package/phpcms/templates/default/message/read_only.html",
+		"/G/GitHub/phpcms/phpcms_v9_UTF8/install_package/robots.txt",
+		"/G/GitHub/phpcms/phpcms_v9_UTF8/install_package/phpcms/modules/content/tag.php",
+		"/G/GitHub/phpcms/phpcms_v9_UTF8/install_package/statics/js/ckeditor/skins/kama/toolbar.css"
+	],
+	"find":
+	{
+		"height": 26.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"put your unique phrase here",
+			"check_uuid",
+			"uuid",
+			"url",
+			"update",
+			"system_information",
+			"王参加",
+			"designer",
+			"public_main",
+			"http://buy.phpcms.cn",
+			"授权信息",
+			"授权",
+			"admin_tpl",
+			"objbody",
+			"template_parse",
+			"lists",
+			"free_result",
+			"content_pages",
+			"_load_func",
+			"template",
+			"_load_func",
+			"load_sys_func",
+			"_auto_load_func",
+			"load_sys_func",
+			"CACHE_MODEL_PATH",
+			"_userid",
+			"safe_deal",
+			"route_config",
+			"safe_deal",
+			"new_addslashes",
+			"_load_class"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"1qazmko0"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "jfun.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"wind/wind.php",
+				"wind\\Wind.php"
+			],
+			[
+				"src/wekit.php",
+				"src\\wekit.php"
+			],
+			[
+				"/includes/init.php",
+				"admin\\includes\\init.php"
+			],
+			[
+				"top.htm",
+				"admin\\templates\\top.htm"
+			],
+			[
+				"index",
+				"admin\\index.php"
+			],
+			[
+				"update",
+				"phpcms\\libs\\classes\\update.class.php"
+			],
+			[
+				"index.tpl.php",
+				"phpcms\\modules\\admin\\templates\\index.tpl.php"
+			],
+			[
+				"rou",
+				"caches\\configs\\route.php"
+			],
+			[
+				"modules/admin/index.php",
+				"phpcms\\modules\\admin\\index.php"
+			],
+			[
+				"adminclasses",
+				"phpcms\\modules\\admin\\classes\\admin.class.php"
+			],
+			[
+				"adminmo",
+				"phpcms\\model\\admin_model.class.php"
+			],
+			[
+				"my",
+				"phpcms\\libs\\classes\\mysql.class.php"
+			],
+			[
+				"db_access",
+				"phpcms\\libs\\classes\\db_access.class.php"
+			],
+			[
+				"mysql",
+				"phpcms\\libs\\classes\\mysql.class.php"
+			],
+			[
+				"db_factory",
+				"phpcms\\libs\\classes\\db_factory.class.php"
+			],
+			[
+				"model.c",
+				"phpcms\\libs\\classes\\model.class.php"
+			],
+			[
+				"position_data_model",
+				"phpcms\\model\\position_data_model.class.php"
+			],
+			[
+				"content_tag",
+				"phpcms\\modules\\content\\classes\\content_tag.class.php"
+			],
+			[
+				"contentindex",
+				"caches\\caches_template\\default\\content\\index.php"
+			],
+			[
+				"template_cache",
+				"phpcms\\libs\\classes\\template_cache.class.php"
+			],
+			[
+				"global",
+				"phpcms\\libs\\functions\\global.func.php"
+			],
+			[
+				"util.func.php",
+				"phpcms\\modules\\content\\functions\\util.func.php"
+			],
+			[
+				"modulescontentindex",
+				"phpcms\\modules\\content\\index.php"
+			],
+			[
+				"route",
+				"caches\\configs\\route.php"
+			],
+			[
+				"configs",
+				"statics\\js\\ckeditor\\config.js"
+			],
+			[
+				"param",
+				"phpcms\\libs\\classes\\param.class.php"
+			],
+			[
+				"application.cl",
+				"phpcms\\libs\\classes\\application.class.php"
+			],
+			[
+				"base.php",
+				"phpcms\\base.php"
+			],
+			[
+				"index.php",
+				"index.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 265.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
