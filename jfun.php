@@ -22,8 +22,6 @@ define('EXT_PATH', JFUN_PATH.'extention'.DIRECTORY_SEPARATOR);
  */
 !defined('JFUN_DEBUG') && define('JFUN_DEBUG', 0);
 
-JFUN::init();
-
 class JFUN{
 	/**
 	 * 初始化框架
@@ -87,12 +85,12 @@ class JFUN{
 	 * 载入公用函数库
 	 */
 	private static function _loadlib(){
+		self::load_sys_func('config');
 		self::load_config('config');
+		self::load_sys_func('err');
 		self::load_lan_func('lan');
 		self::load_lan_func(Config::$lan);
-		//self::load_sys_func('global');
+		self::load_sys_func('global');
 		self::load_sys_func('db');
-		echo L('RequireFileError');
-		echo Config::dsn();
 	}
 }
