@@ -2,6 +2,7 @@
 class JDB extends AbstractDB{
 	//pdo连实例
 	private $pdo;
+	private $usetranslation = false;
 
 	public function select($table, $data = '*', $where = '', $limit = '', $order = '', $group = '') {
 		$where = $where == '' ? '' : ' WHERE '.$where;
@@ -102,12 +103,10 @@ class JDB extends AbstractDB{
 			return $result;
 		}
 		catch (PDOException $e) {
-			$this->close();
-			Err::Msg($e->getMessage(), __FILE__, __LINE__);
+			$this->errHandle($e, __FILE__, __LINE__);
 		}
 		catch (Exception $e) {
-			$this->close();
-			Err::Msg($e->getMessage(), __FILE__, __LINE__);
+			$this->errHandle($e, __FILE__, __LINE__);
 		}
 	}
 
@@ -117,12 +116,10 @@ class JDB extends AbstractDB{
 	   		return $this->pdo->exec($sql);
 		}
 		catch (PDOException $e) {
-			$this->close();
-			Err::Msg($e->getMessage(), __FILE__, __LINE__);
+			$this->errHandle($e, __FILE__, __LINE__);
 		}
 		catch (Exception $e) {
-			$this->close();
-			Err::Msg($e->getMessage(), __FILE__, __LINE__);
+			$this->errHandle($e, __FILE__, __LINE__);
 		}
 	}
 
@@ -130,7 +127,27 @@ class JDB extends AbstractDB{
 		$this->pdo = null;
 	}
 
+	public function createTable($table, $value_arr){
+		$valuedata = array_values($value_arr);
+		$value = implode (',', $valuedata);
+		$sql = "CREATE TABLE [{$table}]({$value})";
+		return $this->exec($sql);
+	}
+
+	public function alterTable($table, $value_arr){
+		$valuedata = array_values($value_arr);
+		$value = implode (',', $valuedata);
+		$sql = "ALTER TABLE [{$table}] {$value}";
+		return $this->exec($sql);
+	}
+
+	public function dropTable($table){
+		$sql = "DROP TABLE [{$table}]";
+		return $this->exec($sql);
+	}
+
 	public function beginTransaction(){
+		$this->usetranslation = true;
 		return $this->pdo->query('BEGIN TRANSACTION');
 	}
 
@@ -151,12 +168,10 @@ class JDB extends AbstractDB{
 	   		$this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
 		}
 		catch (PDOException $e) {
-			$this->close();
-			Err::Msg($e->getMessage(), __FILE__, __LINE__);
+			$this->errHandle($e, __FILE__, __LINE__);
 		}
 		catch (Exception $e) {
-			$this->close();
-			Err::Msg($e->getMessage(), __FILE__, __LINE__);
+			$this->errHandle($e, __FILE__, __LINE__);
 		}
 	}
 
@@ -190,6 +205,18 @@ class JDB extends AbstractDB{
 		}
 		$value = $q.$value.$q;
 		return $value;
+	}
+
+	/**
+	 * @param $e
+	 */
+	protected function errHandle($e, $file, $line)
+	{
+		if($this->usetranslation){
+			$this->rollBack();
+		}
+		$this->close();
+		Err::Msg($e->getMessage(), $file, $line);
 	}
 
 	private function to_utf8(&$value, $key='') {

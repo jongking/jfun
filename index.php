@@ -17,7 +17,10 @@ $db->beginTransaction();
 //$result = $db->select_one('test');
 //$result = $db->update('test', array('no'=>'3', 'name'=>'中文'), '1=1');
 //$result = $db->delete('test', "name='中文'");
-$db->rollBack();
+$result = $db->createTable('testnohere', array("[id] [bigint] IDENTITY(1,1) NOT NULL PRIMARY KEY", "[no] [nvarchar](50) NULL"));
+$result = $db->dropTable('testnohere');
+
+$db->commit();
 // $db->query('select * from test');
 print_r($result);
 $db->close();

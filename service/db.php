@@ -3,15 +3,15 @@ class Db_factory{
 	private static $isinit = false;
 
 	public static function create(){
-		if($isinit){
+		if(self::$isinit){
 			return new JDB();
 		}
 		elseif(JFUN::load_sys_func(Config::$db_type)){
-			$isinit = true;
+			self::$isinit = true;
 			return new JDB();
 		}
 		elseif (JFUN::load_ext_func(Config::$db_type)) {
-			$isinit = true;
+			self::$isinit = true;
 			return new JDB();
 		}
 		else{
