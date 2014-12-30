@@ -146,6 +146,11 @@ class JDB extends AbstractDB{
 		return $this->exec($sql);
 	}
 
+	public function getTableMsg($table){
+		$sql = "Select * from TableMsgV Where ID=OBJECT_ID('{$table}')";
+		return $this->query($sql);
+	}
+
 	public function beginTransaction(){
 		$this->usetranslation = true;
 		return $this->pdo->query('BEGIN TRANSACTION');
@@ -159,9 +164,10 @@ class JDB extends AbstractDB{
 		return $this->pdo->query('ROLLBACK TRANSACTION');
 	}
 	
-	protected function init(){
+	protected function init($db_type, $db_host, $db_dbname, $db_username, $db_userpwd){
 		try {
-	   		$this->pdo = new PDO(Config::dsn(), Config::$db_username, Config::$db_userpwd);
+			$dsn = $db_type.':host='.$db_host.';dbname='.$db_dbname;
+	   		$this->pdo = new PDO($dsn, $db_username, $db_userpwd);
 	   		//字段强制变为小写
 	   		$this->pdo->setAttribute(PDO::ATTR_CASE, PDO::CASE_LOWER);
 	   		//设置为抛出错误模式

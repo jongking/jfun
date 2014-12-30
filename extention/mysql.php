@@ -33,20 +33,21 @@ class JDB extends AbstractDB{
 	public function rollBack(){
 		return $this->pdo->rollBack();
 	}
-	
-	protected function init(){
+
+	protected function init($db_type, $db_host, $db_dbname, $db_username, $db_userpwd){
 		try {
-	   		$this->pdo = new PDO(Config::dsn(), Config::$db_username, Config::$db_userpwd);
-	   		//字段强制变为小写
-	   		$this->pdo->setAttribute(PDO::ATTR_CASE, PDO::CASE_LOWER);
+			$dsn = $db_type.':host='.$db_host.';dbname='.$db_dbname;
+			$this->pdo = new PDO($dsn, $db_username, $db_userpwd);
+			//字段强制变为小写
+			$this->pdo->setAttribute(PDO::ATTR_CASE, PDO::CASE_LOWER);
+			//设置为抛出错误模式
+			$this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		}
 		catch (PDOException $e) {
-			$this->close();
-	   		die("Error: " . $e->getMessage() . "<br/>");
+			$this->errHandle($e, __FILE__, __LINE__);
 		}
 		catch (Exception $e) {
-			$this->close();
-	   		die("Error: " . $e->getMessage() . "<br/>");
+			$this->errHandle($e, __FILE__, __LINE__);
 		}
 	}
 }
