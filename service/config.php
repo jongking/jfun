@@ -15,6 +15,9 @@ class Config{
 	//数据库密码
 	public static $db_userpwd = '123';
 
+	//model的实现类
+	public static $model_extend = 'dbmodel';
+
 	//设置语言
 	public static function setLanguage($language){
 		self::$lan = $language;

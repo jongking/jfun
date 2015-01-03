@@ -4,25 +4,5 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module-library">
-      <library name="PHP">
-        <CLASSES>
-          <root url="file://G:/Program Files/Huweishen.com/PHPWEB/php" />
-        </CLASSES>
-        <SOURCES>
-          <root url="file://G:/Program Files/Huweishen.com/PHPWEB/php" />
-        </SOURCES>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="PHARS">
-        <CLASSES>
-          <root url="phar://G:/Program Files/Huweishen.com/PHPWEB/php/PEAR/go-pear.phar" />
-        </CLASSES>
-        <SOURCES>
-          <root url="phar://G:/Program Files/Huweishen.com/PHPWEB/php/PEAR/go-pear.phar" />
-        </SOURCES>
-      </library>
-    </orderEntry>
   </component>
 </module>

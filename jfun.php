@@ -92,5 +92,6 @@ class JFUN{
 		self::load_lan_func(Config::$lan);
 		self::load_sys_func('global');
 		self::load_sys_func('db');
+		self::load_sys_func('model');
 	}
 }

@@ -1,22 +1,34 @@
 <?php
 class Db_factory{
 	private static $isinit = false;
+	private static $defaultDb;
+
+	public static function DefaultDb(){
+		if(!isset(self::$defaultDb)){
+			self::$defaultDb = self::create();
+		}
+		return self::$defaultDb;
+	}
 
 	public static function create(){
 		if(self::$isinit){
-			return new JDB(Config::$db_type, Config::$db_host, Config::$db_dbname, Config::$db_username, Config::$db_userpwd);
+			return self::JDB(Config::$db_type, Config::$db_host, Config::$db_dbname, Config::$db_username, Config::$db_userpwd);
 		}
 		elseif(JFUN::load_sys_func(Config::$db_type)){
 			self::$isinit = true;
-			return new JDB(Config::$db_type, Config::$db_host, Config::$db_dbname, Config::$db_username, Config::$db_userpwd);
+			return self::JDB(Config::$db_type, Config::$db_host, Config::$db_dbname, Config::$db_username, Config::$db_userpwd);
 		}
 		elseif (JFUN::load_ext_func(Config::$db_type)) {
 			self::$isinit = true;
-			return new JDB(Config::$db_type, Config::$db_host, Config::$db_dbname, Config::$db_username, Config::$db_userpwd);
+			return self::JDB(Config::$db_type, Config::$db_host, Config::$db_dbname, Config::$db_username, Config::$db_userpwd);
 		}
 		else{
-			echo 'no db connect';
+			die('no db connect');
 		}
+	}
+
+	private static function JDB($db_type, $db_host, $db_dbname, $db_username, $db_userpwd){
+		return new JDB($db_type, $db_host, $db_dbname, $db_username, $db_userpwd);
 	}
 }
 

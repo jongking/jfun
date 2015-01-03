@@ -157,10 +157,12 @@ class JDB extends AbstractDB{
 	}
 
 	public function commit(){
+		$this->usetranslation = false;
 		return $this->pdo->query('COMMIT TRANSACTION');
 	}
 	
 	public function rollBack(){
+		$this->usetranslation = false;
 		return $this->pdo->query('ROLLBACK TRANSACTION');
 	}
 	
