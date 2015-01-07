@@ -37,6 +37,16 @@ class DbModel
         return $this->jdb->select($this->tableName());
     }
 
+    public function getMsg()
+    {
+        return $this->jdb->getTableMsg($this->tableName());
+    }
+
+    public function getCol()
+    {
+        return $this->jdb->getTableCol($this->tableName());
+    }
+
     private function tableName(){
         return 'm_'.$this->modelName;
     }

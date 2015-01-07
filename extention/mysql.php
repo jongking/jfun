@@ -135,9 +135,21 @@ class JDB extends AbstractDB{
 		return $this->exec($sql);
 	}
 
-	public function getTableMsg($table){
-		$sql = "SELECT * FROM information_schema.columns WHERE table_name =  '{$table}'";
+	public function getTableMsg($table, $vals = "*"){
+		$db_dbname = Config::$db_dbname;
+		$sql = "SELECT $vals FROM information_schema.columns WHERE TABLE_SCHEMA = '{$db_dbname}' AND TABLE_NAME =  '{$table}'";
 		return $this->query($sql);
+	}
+
+	public function getTableCol($table){
+		$db_dbname = Config::$db_dbname;
+		$sql = "SELECT column_name AS colname FROM information_schema.columns WHERE TABLE_SCHEMA = '{$db_dbname}' AND TABLE_NAME =  '{$table}'";
+		$var_arr = $this->query($sql);
+		$result = array();
+		foreach($var_arr as $value){
+			array_push($result, $value["colname"]);
+		}
+		return $result;
 	}
 
 	public function close(){
@@ -172,6 +184,8 @@ class JDB extends AbstractDB{
 		try {
 			$dsn = $db_type.':host='.$db_host.';dbname='.$db_dbname;
 			$this->pdo = new PDO($dsn, $db_username, $db_userpwd);
+			//设置链接编码为utf8
+			$this->pdo->query("SET NAMES 'UTF8'");
 			//字段强制变为小写
 			$this->pdo->setAttribute(PDO::ATTR_CASE, PDO::CASE_LOWER);
 			//设置为抛出错误模式
