@@ -17,6 +17,8 @@ class Config{
 
 	//model的实现类
 	public static $model_extend = 'dbmodel';
+	//view的实现类
+	public static $view_extend = 'dbview';
 
 	//设置语言
 	public static function setLanguage($language){
