@@ -9,7 +9,7 @@
 class View_Manager {
     private static $isInit = false;
 
-    public static function create($viewName, $param = ''){
+    public static function create($param = ''){
         if(self::$isInit){
         }
         elseif(JFUN::load_sys_func(Config::$view_extend)){
@@ -21,12 +21,13 @@ class View_Manager {
         else{
             die('no db connect');
         }
-        return self::view($viewName, $param);
+        return self::View($param);
     }
 
-    private static function View($viewName, $param){
+    private static function View($param){
         if(Config::$view_extend == 'dbview'){
-            return new DbView($viewName, $param);
+            return new DbView($param);
         }
+        return new DbView($param);
     }
 }

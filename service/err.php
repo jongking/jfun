@@ -7,4 +7,8 @@ class Err{
 		$errmsg = "Error: " . $msg . "<br/>" . "FILE: " . $filename . "<br/>" . "LINE: " . $line . "<br/>";
 		die($errmsg);
 	}
+
+	public static function CheckMsg($msg = ''){
+		die($msg);
+	}
 }

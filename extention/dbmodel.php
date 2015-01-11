@@ -20,4 +20,14 @@ class DbModel extends DbFun
     public function tableName(){
         return 'm_'.$this->modelName;
     }
+
+    public function getAllModelName(){
+        $result = $this->jdb->getTableCol('m_%', 'table_name', '', '', 'table_name');
+        array_walk($result, array($this, 'replaceM_'));
+        return $result;
+    }
+
+    private function replaceM_(&$value){
+        $value = substr($value, 2);
+    }
 }

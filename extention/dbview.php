@@ -11,7 +11,7 @@ class DbView extends DbFun
 {
     public function __construct($useNew = false)
     {
-        parent:: __construct($useNew);
+        parent::__construct($useNew);
     }
 
     public function tableName()

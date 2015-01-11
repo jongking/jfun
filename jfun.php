@@ -90,6 +90,7 @@ class JFUN{
 		self::load_sys_func('err');
 		self::load_lan_func('lan');
 		self::load_lan_func(Config::$lan);
+		self::load_sys_func('check');
 		self::load_sys_func('global');
 		self::load_sys_func('db');
 		self::load_sys_func('dbFun');
@@ -97,3 +98,4 @@ class JFUN{
 		self::load_sys_func('view');
 	}
 }
+JFUN::init();

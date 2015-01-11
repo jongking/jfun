@@ -22,7 +22,7 @@ class DbComment extends DbFun{
 }
 
 abstract class DbFun {
-    private $jdb;
+    protected $jdb;
 
     public function __construct($useNew = false)
     {
@@ -49,14 +49,19 @@ abstract class DbFun {
         return $this->jdb->select($this->tableName());
     }
 
-    public function getMsg()
+    public function getMsg($tableName = 'notableName')
     {
-        return $this->jdb->getTableMsg($this->tableName());
+        if($tableName == 'notableName'){
+            return $this->jdb->getTableMsg($this->tableName());
+        }
+        else{
+            return $this->jdb->getTableMsg($tableName);
+        }
     }
 
-    public function getCol()
+    public function getCol($colName = 'column_name')
     {
-        return $this->jdb->getTableCol($this->tableName());
+        return $this->jdb->getTableCol($this->tableName(), $colName);
     }
 
     public function create($val_arr)

@@ -4,7 +4,7 @@ class JDB extends AbstractDB{
 	private $pdo;
 	private $useTranslation = false;
 
-	public function select($table, $data = '*', $where = '', $limit = '', $order = '', $group = '') {
+	public function select($table, $data = '*', $where = '', $limit = '', $order = '', $group = '', $safe = true) {
 		$where = $where == '' ? '' : ' WHERE '.$where;
 		$order = $order == '' ? '' : ' ORDER BY '.$order;
 		$group = $group == '' ? '' : ' GROUP BY '.$group;
@@ -12,12 +12,26 @@ class JDB extends AbstractDB{
 		$field = explode(',', $data);
 		array_walk($field, array($this, 'add_special_char'));
 		$data = implode(',', $field);
-		$sql = 'SELECT '.$data.' FROM `'.$table.'` '.$where.$group.$order.$limit;
+		if($safe){
+			$sql = 'SELECT '.$data.' FROM `'.$table.'` '.$where.$group.$order.$limit;
+		}
+		else{
+			$sql = 'SELECT '.$data.' FROM '.$table.' '.$where.$group.$order.$limit;
+		}
 		return $this->query($sql);
 	}
 
-	public function select_one($table, $data = '*', $where = '', $order = '', $group = '') {
+	public function selectOne($table, $data = '*', $where = '', $order = '', $group = '') {
 		return $this->select($table, $data, $where, '1', $order, $group);
+	}
+
+	public function selectOneCol($table, $colName, $where = '', $limit = '', $order = '', $group = ''){
+		$var_arr = $this->select($table, $colName, $where, $limit, $order, $group);
+		$result = array();
+		foreach($var_arr as $value){
+			array_push($result, $value[$colName]);
+		}
+		return $result;
 	}
 
 	public function insert($table, $value_arr){
@@ -135,19 +149,16 @@ class JDB extends AbstractDB{
 		return $this->exec($sql);
 	}
 
-	public function getTableMsg($table, $vals = "*"){
+	public function getTableMsg($table, $vals = "*", $limit = '', $order = '', $group = ''){
 		$db_dbname = Config::$db_dbname;
-		$sql = "SELECT $vals FROM information_schema.columns WHERE TABLE_SCHEMA = '{$db_dbname}' AND TABLE_NAME =  '{$table}'";
-		return $this->query($sql);
+		return $this->select("information_schema.columns", $vals, "TABLE_SCHEMA = '{$db_dbname}' AND TABLE_NAME LIKE '{$table}'", $limit, $order, $group, false);
 	}
 
-	public function getTableCol($table){
-		$db_dbname = Config::$db_dbname;
-		$sql = "SELECT column_name AS colname FROM information_schema.columns WHERE TABLE_SCHEMA = '{$db_dbname}' AND TABLE_NAME =  '{$table}'";
-		$var_arr = $this->query($sql);
+	public function getTableCol($table, $colName = 'column_name', $limit = '', $order = '', $group = ''){
+		$var_arr = $this->getTableMsg($table, $colName, $limit, $order, $group);
 		$result = array();
 		foreach($var_arr as $value){
-			array_push($result, $value["colname"]);
+			array_push($result, $value[$colName]);
 		}
 		return $result;
 	}

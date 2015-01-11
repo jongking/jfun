@@ -27,5 +27,10 @@ class Model_Manager {
         if(Config::$model_extend == 'dbmodel'){
             return new DbModel($modelName, $param);
         }
+        return new DbModel($modelName, $param);
+    }
+
+    public static function nullModel(){
+        return self::create('');
     }
 }
