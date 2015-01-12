@@ -44,6 +44,16 @@ abstract class DbFun {
         return $this->jdb->delete($this->tableName(), $where);
     }
 
+    public function get($data = '*', $where = '', $limit = '', $order = '', $group = '')
+    {
+        return $this->jdb->select($this->tableName(), $data, $where, $limit, $order, $group);
+    }
+
+    public function getOne($data = '*', $where = '', $order = '', $group = '')
+    {
+        return $this->jdb->selectOne($this->tableName(), $data, $where, $order, $group);
+    }
+
     public function getAll()
     {
         return $this->jdb->select($this->tableName());
@@ -67,6 +77,33 @@ abstract class DbFun {
     public function create($val_arr)
     {
         return $this->jdb->createTable($this->tableName(), $val_arr);
+    }
+
+    public function createByArray(array$colNames, array$colTypes, array$collDefaultValues, $withId = true)
+    {
+        $addModelScript = array();
+        if($withId == true){
+            array_push($addModelScript, "`id` int(8) NOT NULL AUTO_INCREMENT PRIMARY KEY");
+        }
+        foreach ($colNames as $key => $colName) {
+            if(Check::create()->isEmpty($colName)) continue;
+
+            $colType = $colTypes[$key];
+            $colDefaultValue = $collDefaultValues[$key];
+            if(!Check::create()->isEmpty($colDefaultValue)){
+                $colDefaultValue = " DEFAULT '{$colDefaultValue}' ";
+            }
+            switch($colType){
+                case "int":$colType = " int(20) ";break;
+                case "varchar1":$colType = " varchar(100) ";break;
+                case "varchar2":$colType = " varchar(4000) ";break;
+                case "text":$colType = " TEXT ";break;
+                case "date":$colType = " int(20) ";break;
+            }
+            array_push($addModelScript, "`{$colName}` {$colType} NOT NULL {$colDefaultValue}");
+        }
+
+        return $this->create($addModelScript);
     }
 
     public function alert($val_arr){

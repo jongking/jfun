@@ -9,6 +9,17 @@
 //界面的实现类
 class DbView extends DbFun
 {
+    public function getTemplate($templateName)
+    {
+        $result = $this->getOne('template', "templateName = '{$templateName}'");
+        if(sizeof($result) == 1){
+            return $result[0]['template'];
+        }
+        else{
+            return "";
+        }
+    }
+
     public function __construct($useNew = false)
     {
         parent::__construct($useNew);

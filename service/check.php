@@ -8,7 +8,7 @@
  */
 class Check
 {
-    public function limitLen($value, $lenDn = 30, $lenUp = 0, $description = '')
+    public function limitLen($value, $lenUp = 0, $lenDn = 30, $description = '')
     {
         if (strlen($value) > $lenDn) {
             Err::CheckMsg("{$description}长度不能大于{$lenDn}");
