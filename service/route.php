@@ -7,6 +7,21 @@
  */
 
 class Route {
+    public static $view = 'index';
+    public static $action = 'index';
+    public static $queryString = array();
+    public static function parseUrl2(){
+        if(isset($_REQUEST['view'])){
+            self::$view = $_REQUEST['view'];
+        }
+        if(isset($_REQUEST['action'])){
+            self::$action = $_REQUEST['action'];
+        }
+        if(isset($_REQUEST['queryString'])){
+            self::$queryString = $_REQUEST['queryString'];
+        }
+    }
+
     public static function parseUrl(){
         $GLOBALS['view'] = 'index';
         $GLOBALS['action'] = 'index';

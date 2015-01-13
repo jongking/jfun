@@ -28,7 +28,7 @@ class JFUN{
 	 */
 	public static function init(){
 		self::_loadlib();
-		Route::parseUrl();
+		Route::parseUrl2();
 	}
 
 	/**
