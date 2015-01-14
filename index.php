@@ -21,79 +21,64 @@ $modelDtl = $viewObj->get('templatename');
     <script>
         var gridster;
         $(function(){
-            gridster = $(".gridster ul").gridster({    //通过jquery选择DOM实现gridster
-                widget_base_dimensions: [100, 120],    //模块的宽高 [宽,高]
+            gridster = $(".gridster").gridster({    //通过jquery选择DOM实现gridster
+                widget_selector:'div',
+                widget_base_dimensions: [100, 100],    //模块的宽高 [宽,高]
                 widget_margins: [5, 5]    //模块的间距 [上下,左右]
             }).data('gridster');
+//            gridster.disable();
+//                gridster.enable();
+
+            var $accordion = $(".accordion-group > div");
+            $accordion.hide();
+            $accordion.attr("data-turnon", "False");
+            $(".accordion-group").click(function(){
+                var $this = $(this);
+                if($this.attr("data-turnon") == "True"){
+                    $this.find("div").hide();
+                    $this.attr("data-turnon", "False");
+                }
+                else{
+                    $this.find("div").show();
+                    $this.attr("data-turnon", "True");
+                }
+            });
         });
     </script>
     <style>
-        .gridster ul{margin:0;}
-        .gridster ul li{list-style-type:none;border:1px solid #e0e0e0;}
+        .gridster{border:1px solid #000000;}
+        .gridster div{border:1px solid #000000;}
+        .container{float:left; border: 1px solid #000000;}
+        .accordion-group{
+            cursor: pointer;}
     </style>
 </head>
 <body>
-<div class="gridster">
-    <ul>
-        <li data-row="1" data-col="1" data-sizex="2" data-sizey="2">
-            <!-- 这里写了一个header，对应配置里面的handle，鼠标落到header上面可以拖，而不是整个块 -->
-            <header>|||</header>
-            0
-        </li>
-        <li data-row="1" data-col="3" data-sizex="1" data-sizey="2">
-            <header>|||</header>
-            1
-        </li>
-        <li data-row="1" data-col="4" data-sizex="1" data-sizey="1">
-            <header>|||</header>
-            2
-        </li>
-        <li data-row="3" data-col="2" data-sizex="3" data-sizey="1">
-            <header>|||</header>
-            3
-        </li>
-        <li data-row="4" data-col="1" data-sizex="1" data-sizey="1">
-            <header>|||</header>
-            4
-        </li>
-        <li data-row="3" data-col="1" data-sizex="1" data-sizey="1">
-            <header>|||</header>
-            5
-        </li>
-        <li data-row="4" data-col="2" data-sizex="1" data-sizey="1">
-            <header>|||</header>
-            6
-        </li>
-        <li data-row="5" data-col="2" data-sizex="1" data-sizey="1">
-            <header>|||</header>
-            7
-        </li>
-        <li data-row="4" data-col="4" data-sizex="1" data-sizey="1">
-            <header>|||</header>
-            8
-        </li>
-        <li data-row="1" data-col="5" data-sizex="1" data-sizey="3">
-            <header>|||</header>
-            9
-        </li>
-    </ul>
+<div class="container">
+    <table>
+        <tr>
+            <td>tempatename</td>
+        </tr>
+        <?php foreach ($modelDtl as $valueDtl) { ?>
+            <tr>
+                <td><a href="index.php?view=<?= $valueDtl['templatename'] ?>"><?= $valueDtl['templatename'] ?></a></td>
+            </tr>
+        <?php } ?>
+    </table>
 </div>
-<!--<div style="float:left; border: 1px solid #000000;">-->
-<!--    <table>-->
-<!--        <tr>-->
-<!--            <td>tempatename</td>-->
-<!--        </tr>-->
-<!--        --><?php //foreach ($modelDtl as $valueDtl) { ?>
-<!--            <tr>-->
-<!--                <td><a href="index.php?view=--><?//= $valueDtl['templatename'] ?><!--">--><?//= $valueDtl['templatename'] ?><!--</a></td>-->
-<!--            </tr>-->
-<!--        --><?php //} ?>
-<!--    </table>-->
-<!--</div>-->
-<!--<div data-row="1" data-col="3" data-sizex="1" data-sizey="2">-->
-<!---->
-<!--</div>-->
-<!--<div style="float:left; border: 1px solid #000000;">-->
-<!--    --><?php //print_r($viewObj->getTemplate(Route::$view)); ?>
-<!--</div>-->
+<div class="container">
+    <div class="accordion-group">
+        a
+        <div>b</div>
+        <div>c</div>
+        <div>d</div>
+    </div>
+</div>
+<div class="container">
+    <div class="gridster">
+        <div data-row="1" data-col="8" data-sizex="1" data-sizey="3">
+            <?php print_r($viewObj->getTemplate(Route::$view)); ?>
+        </div>
+    </div>
+</div>
 </body>
