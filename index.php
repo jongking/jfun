@@ -16,64 +16,133 @@ $modelDtl = $viewObj->get('templatename');
     <link href="./source/css/public.css" rel="stylesheet">
     <link href="./source/css/jquery.gridster.css" rel="stylesheet">
     <script type="text/javascript" src="./source/js/jquery-1.7.2.js"></script>
+    <script type="text/javascript" src="./source/js/mustache.js"></script>
     <script type="text/javascript" src="./source/js/jquery.gridster.js"></script>
+    <script type="text/javascript" src="./source/js/jquery.mustache.js"></script>
     <script type="text/javascript" src="./source/js/public.js"></script>
     <script>
+        function menuGroupInit() {
+            var $menu = $(".menu-group");
+            $menu.children().hide();
+            $menu.attr("data-turnon", "False");
+            var $menuHead = $(".menu-group-head");
+            $menuHead.show();
+            $menuHead.click(function () {
+                var $parent = $(this).parent();
+                if ($parent.attr("data-turnon") == "True") {
+                    $parent.children().hide();
+                    $parent.attr("data-turnon", "False");
+                }
+                else {
+                    $parent.children().show();
+                    $parent.attr("data-turnon", "True");
+                }
+                $(this).show();
+            });
+            $(".menu-group-head[data-turnon='True']").click();
+        }
         var gridster;
-        $(function(){
+        function gridsterInit() {
             gridster = $(".gridster").gridster({    //通过jquery选择DOM实现gridster
-                widget_selector:'div',
+                widget_selector: 'div',
                 widget_base_dimensions: [100, 100],    //模块的宽高 [宽,高]
                 widget_margins: [5, 5]    //模块的间距 [上下,左右]
             }).data('gridster');
 //            gridster.disable();
 //                gridster.enable();
+        }
+        function loadTemplate() {
+            $('#target').html($('#template').mustache({
+                name: "Luke"
+            }));
+        }
+        $(function () {
+            loadTemplate();
+            gridsterInit();
+            menuGroupInit();
 
-            var $accordion = $(".accordion-group > div");
-            $accordion.hide();
-            $accordion.attr("data-turnon", "False");
-            $(".accordion-group").click(function(){
+            $(".control-add").click(function () {
                 var $this = $(this);
-                if($this.attr("data-turnon") == "True"){
-                    $this.find("div").hide();
-                    $this.attr("data-turnon", "False");
-                }
-                else{
-                    $this.find("div").show();
-                    $this.attr("data-turnon", "True");
-                }
+                var controlhtml = $this.attr("data-controlhtml");
+                gridster.add_widget("<div>" + controlhtml + "</div>");
             });
         });
     </script>
     <style>
-        .gridster{border:1px solid #000000;}
-        .gridster div{border:1px solid #000000;}
-        .container{float:left; border: 1px solid #000000;}
-        .accordion-group{
-            cursor: pointer;}
+        .gridster {
+            border: 1px solid #000000;
+        }
+
+        .gridster div {
+            border: 1px solid #000000;
+        }
+
+        .container {
+            float: left;
+            border: 1px solid #000000;
+        }
+
+        .menu-group {
+            background-color: antiquewhite
+        }
+
+        .menu-group-head {
+            background-color: #9cc9e0;
+            cursor: pointer;
+        }
+
+        .control-add{
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
-<div class="container">
-    <table>
-        <tr>
-            <td>tempatename</td>
-        </tr>
-        <?php foreach ($modelDtl as $valueDtl) { ?>
-            <tr>
-                <td><a href="index.php?view=<?= $valueDtl['templatename'] ?>"><?= $valueDtl['templatename'] ?></a></td>
-            </tr>
-        <?php } ?>
-    </table>
-</div>
-<div class="container">
-    <div class="accordion-group">
-        a
-        <div>b</div>
-        <div>c</div>
-        <div>d</div>
+<div id="target" class="container">Loading...</div>
+<script id="template" type="text/html">
+    <div class="menu-group">
+        <div class="menu-group-head" data-turnon="True">
+            视图列表{{name}}
+        </div>
+        <div>
+            <table>
+                <tr>
+                    <td>tempatename</td>
+                </tr>
+                <?php foreach ($modelDtl as $valueDtl) { ?>
+                    <tr>
+                        <td>
+                            <a href="index.php?view=<?= $valueDtl['templatename'] ?>"><?= $valueDtl['templatename'] ?></a>
+                        </td>
+                    </tr>
+                <?php } ?>
+            </table>
+        </div>
     </div>
-</div>
+    <div class="menu-group">
+        <div class="menu-group-head" data-turnon="True">
+            控件列表
+        </div>
+        <div>
+            <div class="menu-group">
+                <div class="menu-group-head" data-turnon="True">
+                    基本元素
+                </div>
+                <div class="control-add" data-controlhtml="<input>">输入框
+                </div>
+                <div>c</div>
+                <div>d</div>
+            </div>
+            <div class="menu-group">
+                <div class="menu-group-head">
+                    aaaaa
+                </div>
+                <div>b</div>
+                <div>c</div>
+                <div>d</div>
+            </div>
+        </div>
+    </div>
+</script>
 <div class="container">
     <div class="gridster">
         <div data-row="1" data-col="8" data-sizex="1" data-sizey="3">

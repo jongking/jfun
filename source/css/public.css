@@ -2,3 +2,6 @@ body, div, table {
     padding: 0;
     margin: 0;
 }
+div{
+    padding: 2px;
+}
