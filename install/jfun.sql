@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2015 年 01 月 15 日 15:22
+-- 生成日期: 2015 年 01 月 16 日 14:10
 -- 服务器版本: 5.5.19
 -- PHP 版本: 5.2.17
 
@@ -100,6 +100,29 @@ INSERT INTO `test` (`id`, `no`) VALUES
 (2, '3'),
 (3, '3'),
 (4, 'ä¸­');
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `v_htmlcontrols`
+--
+
+CREATE TABLE IF NOT EXISTS `v_htmlcontrols` (
+  `id` int(8) NOT NULL AUTO_INCREMENT,
+  `controlname` varchar(100) NOT NULL COMMENT '控件名',
+  `controlhtml` varchar(4000) NOT NULL COMMENT '控件内容',
+  `controlgroupname` varchar(100) NOT NULL COMMENT '控件组名',
+  `comment` varchar(4000) NOT NULL COMMENT '控件注释',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='html控件表' AUTO_INCREMENT=3 ;
+
+--
+-- 转存表中的数据 `v_htmlcontrols`
+--
+
+INSERT INTO `v_htmlcontrols` (`id`, `controlname`, `controlhtml`, `controlgroupname`, `comment`) VALUES
+(1, '输入框', '<input/>', '基本元素', '输入框'),
+(2, '两个输入框', '<input/><input/>', '高级组件', '两个输入框');
 
 -- --------------------------------------------------------
 

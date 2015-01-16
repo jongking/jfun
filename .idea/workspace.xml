@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9880101d-fdab-40c2-be30-484ab4c6d509" name="Default" comment="add table function">
-      <change type="DELETED" beforePath="H:\GitHub\jfun\jfun.sublime-workspace" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extention/dbview.php" afterPath="$PROJECT_DIR$/extention/dbview.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/view.php" afterPath="$PROJECT_DIR$/service/view.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/install/jfun.sql" afterPath="$PROJECT_DIR$/install/jfun.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="jfun.iws" />
@@ -37,27 +34,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.7638191" vertical-offset="1493" max-vertical-offset="3059">
+            <state vertical-scroll-proportion="-37.607143" vertical-offset="1493" max-vertical-offset="3059">
               <caret line="134" column="30" selection-start-line="134" selection-start-column="30" selection-end-line="134" selection-end-column="30" />
-              <folding>
-                <marker date="1421417238462" expanded="true" signature="375:1933" placeholder="..." />
-                <marker date="1421417238462" expanded="true" signature="1178:1933" placeholder="..." />
-                <marker date="1421417238462" expanded="true" signature="1463:1887" placeholder="{...}" />
-                <marker date="1421417238462" expanded="true" signature="1572:1696" placeholder="{...}" />
-                <marker date="1421417238462" expanded="true" signature="1718:1841" placeholder="{...}" />
-                <marker date="1421417238462" expanded="true" signature="4080:5038" placeholder="..." />
-                <marker date="1421417238462" expanded="true" signature="4137:4169" placeholder="..." />
-                <marker date="1421417238462" expanded="true" signature="4183:5027" placeholder="..." />
-                <marker date="1421417238462" expanded="true" signature="4301:4989" placeholder="..." />
-                <marker date="1421417238462" expanded="true" signature="4370:4470" placeholder="..." />
-                <marker date="1421417238462" expanded="true" signature="4836:4909" placeholder="..." />
-                <marker date="1421417238462" expanded="true" signature="5071:5268" placeholder="..." />
-                <marker date="1421417238462" expanded="true" signature="5098:5261" placeholder="..." />
-                <marker date="1421417238462" expanded="true" signature="5168:5250" placeholder="..." />
-              </folding>
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jfun.sql" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/install/jfun.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="190" max-vertical-offset="3021">
+              <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -65,7 +57,7 @@
       <file leaf-file-name="model.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/service/model.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.892858" vertical-offset="95" max-vertical-offset="779">
+            <state vertical-scroll-proportion="0.0" vertical-offset="95" max-vertical-offset="779">
               <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
               <folding />
             </state>
@@ -75,7 +67,7 @@
       <file leaf-file-name="view.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/service/view.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.571428" vertical-offset="0" max-vertical-offset="627">
+            <state vertical-scroll-proportion="0.0" vertical-offset="380" max-vertical-offset="627">
               <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
               <folding />
             </state>
@@ -85,7 +77,7 @@
       <file leaf-file-name="dbview.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/extention/dbview.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.6785714" vertical-offset="0" max-vertical-offset="665">
+            <state vertical-scroll-proportion="0.0" vertical-offset="19" max-vertical-offset="665">
               <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
               <folding />
             </state>
@@ -95,7 +87,7 @@
       <file leaf-file-name="mysql.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/extention/mysql.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.607142" vertical-offset="0" max-vertical-offset="4731">
+            <state vertical-scroll-proportion="0.0" vertical-offset="437" max-vertical-offset="4731">
               <caret line="23" column="20" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
               <folding>
                 <marker date="1420901944506" expanded="true" signature="1637:1688" placeholder="INSERT INTO ..." />
@@ -111,7 +103,7 @@
       <file leaf-file-name="dbmodel.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/extention/dbmodel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.714286" vertical-offset="2" max-vertical-offset="627">
+            <state vertical-scroll-proportion="0.0" vertical-offset="2" max-vertical-offset="627">
               <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding />
             </state>
@@ -121,7 +113,7 @@
       <file leaf-file-name="db.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/service/db.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.142858" vertical-offset="515" max-vertical-offset="1140">
+            <state vertical-scroll-proportion="0.0" vertical-offset="515" max-vertical-offset="1140">
               <caret line="45" column="31" selection-start-line="45" selection-start-column="20" selection-end-line="45" selection-end-column="31" />
               <folding />
             </state>
@@ -131,7 +123,7 @@
       <file leaf-file-name="dbFun.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/service/dbFun.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.107143" vertical-offset="580" max-vertical-offset="2242">
+            <state vertical-scroll-proportion="0.0" vertical-offset="580" max-vertical-offset="2242">
               <caret line="46" column="20" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="20" />
               <folding />
             </state>
@@ -141,18 +133,8 @@
       <file leaf-file-name="install.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/install/install.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.071429" vertical-offset="11" max-vertical-offset="608">
+            <state vertical-scroll-proportion="0.0" vertical-offset="11" max-vertical-offset="608">
               <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="jquery.mustache.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/source/js/jquery.mustache.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="361">
-              <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -277,7 +259,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -354,6 +335,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -401,15 +383,15 @@
       <BehatRunner />
       <method />
     </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
       <tasks />
       <pass-parent-envs>true</pass-parent-envs>
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <list size="1">
@@ -443,7 +425,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -451,21 +433,21 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32936507" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20396826" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20714286" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32988167" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32988167" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5198777" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32822084" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297546" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32822084" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -500,6 +482,14 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/source/js/jquery.mustache.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="190" max-vertical-offset="361">
+          <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/service/config.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="969">
@@ -560,22 +550,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="741">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1421417238462" expanded="true" signature="375:1933" placeholder="..." />
-            <marker date="1421417238462" expanded="true" signature="1178:1933" placeholder="..." />
-            <marker date="1421417238462" expanded="true" signature="1463:1887" placeholder="{...}" />
-            <marker date="1421417238462" expanded="true" signature="1572:1696" placeholder="{...}" />
-            <marker date="1421417238462" expanded="true" signature="1718:1841" placeholder="{...}" />
-            <marker date="1421417238462" expanded="true" signature="4080:5038" placeholder="..." />
-            <marker date="1421417238462" expanded="true" signature="4137:4169" placeholder="..." />
-            <marker date="1421417238462" expanded="true" signature="4183:5027" placeholder="..." />
-            <marker date="1421417238462" expanded="true" signature="4301:4989" placeholder="..." />
-            <marker date="1421417238462" expanded="true" signature="4370:4470" placeholder="..." />
-            <marker date="1421417238462" expanded="true" signature="4836:4909" placeholder="..." />
-            <marker date="1421417238462" expanded="true" signature="5071:5268" placeholder="..." />
-            <marker date="1421417238462" expanded="true" signature="5098:5261" placeholder="..." />
-            <marker date="1421417238462" expanded="true" signature="5168:5250" placeholder="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -611,22 +586,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="684">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1421417238462" expanded="true" signature="375:1933" placeholder="..." />
-            <marker date="1421417238462" expanded="true" signature="1178:1933" placeholder="..." />
-            <marker date="1421417238462" expanded="true" signature="1463:1887" placeholder="{...}" />
-            <marker date="1421417238462" expanded="true" signature="1572:1696" placeholder="{...}" />
-            <marker date="1421417238462" expanded="true" signature="1718:1841" placeholder="{...}" />
-            <marker date="1421417238462" expanded="true" signature="4080:5038" placeholder="..." />
-            <marker date="1421417238462" expanded="true" signature="4137:4169" placeholder="..." />
-            <marker date="1421417238462" expanded="true" signature="4183:5027" placeholder="..." />
-            <marker date="1421417238462" expanded="true" signature="4301:4989" placeholder="..." />
-            <marker date="1421417238462" expanded="true" signature="4370:4470" placeholder="..." />
-            <marker date="1421417238462" expanded="true" signature="4836:4909" placeholder="..." />
-            <marker date="1421417238462" expanded="true" signature="5071:5268" placeholder="..." />
-            <marker date="1421417238462" expanded="true" signature="5098:5261" placeholder="..." />
-            <marker date="1421417238462" expanded="true" signature="5168:5250" placeholder="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -777,7 +737,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1710" max-vertical-offset="3192">
           <caret line="109" column="25" selection-start-line="109" selection-start-column="25" selection-end-line="109" selection-end-column="51" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -793,7 +752,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="11039">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -801,14 +759,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1843" max-vertical-offset="2052">
           <caret line="97" column="37" selection-start-line="97" selection-start-column="37" selection-end-line="97" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/install/jfun.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.28" vertical-offset="869" max-vertical-offset="2584">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -824,7 +774,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2736" vertical-offset="16017" max-vertical-offset="75829">
           <caret line="854" column="0" selection-start-line="854" selection-start-column="0" selection-end-line="854" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -838,7 +787,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/install/install.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.071429" vertical-offset="11" max-vertical-offset="608">
+        <state vertical-scroll-proportion="0.0" vertical-offset="11" max-vertical-offset="608">
           <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
           <folding />
         </state>
@@ -846,7 +795,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/service/db.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.142858" vertical-offset="515" max-vertical-offset="1140">
+        <state vertical-scroll-proportion="0.0" vertical-offset="515" max-vertical-offset="1140">
           <caret line="45" column="31" selection-start-line="45" selection-start-column="20" selection-end-line="45" selection-end-column="31" />
           <folding />
         </state>
@@ -854,7 +803,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/extention/dbmodel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.714286" vertical-offset="2" max-vertical-offset="627">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2" max-vertical-offset="627">
           <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding />
         </state>
@@ -862,7 +811,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/extention/dbview.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.6785714" vertical-offset="0" max-vertical-offset="665">
+        <state vertical-scroll-proportion="0.0" vertical-offset="19" max-vertical-offset="665">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
         </state>
@@ -870,7 +819,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/extention/mysql.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.607142" vertical-offset="0" max-vertical-offset="4731">
+        <state vertical-scroll-proportion="0.0" vertical-offset="437" max-vertical-offset="4731">
           <caret line="23" column="20" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
           <folding>
             <marker date="1420901944506" expanded="true" signature="1637:1688" placeholder="INSERT INTO ..." />
@@ -884,7 +833,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/service/model.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.892858" vertical-offset="95" max-vertical-offset="779">
+        <state vertical-scroll-proportion="0.0" vertical-offset="95" max-vertical-offset="779">
           <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding />
         </state>
@@ -892,7 +841,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/service/view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.571428" vertical-offset="0" max-vertical-offset="627">
+        <state vertical-scroll-proportion="0.0" vertical-offset="380" max-vertical-offset="627">
           <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
           <folding />
         </state>
@@ -900,7 +849,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/service/dbFun.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.107143" vertical-offset="580" max-vertical-offset="2242">
+        <state vertical-scroll-proportion="0.0" vertical-offset="580" max-vertical-offset="2242">
           <caret line="46" column="20" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="20" />
           <folding />
         </state>
@@ -908,24 +857,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.7638191" vertical-offset="1493" max-vertical-offset="3059">
+        <state vertical-scroll-proportion="-37.607143" vertical-offset="1493" max-vertical-offset="3059">
           <caret line="134" column="30" selection-start-line="134" selection-start-column="30" selection-end-line="134" selection-end-column="30" />
-          <folding>
-            <marker date="1421417238462" expanded="true" signature="375:1933" placeholder="..." />
-            <marker date="1421417238462" expanded="true" signature="1178:1933" placeholder="..." />
-            <marker date="1421417238462" expanded="true" signature="1463:1887" placeholder="{...}" />
-            <marker date="1421417238462" expanded="true" signature="1572:1696" placeholder="{...}" />
-            <marker date="1421417238462" expanded="true" signature="1718:1841" placeholder="{...}" />
-            <marker date="1421417238462" expanded="true" signature="4080:5038" placeholder="..." />
-            <marker date="1421417238462" expanded="true" signature="4137:4169" placeholder="..." />
-            <marker date="1421417238462" expanded="true" signature="4183:5027" placeholder="..." />
-            <marker date="1421417238462" expanded="true" signature="4301:4989" placeholder="..." />
-            <marker date="1421417238462" expanded="true" signature="4370:4470" placeholder="..." />
-            <marker date="1421417238462" expanded="true" signature="4836:4909" placeholder="..." />
-            <marker date="1421417238462" expanded="true" signature="5071:5268" placeholder="..." />
-            <marker date="1421417238462" expanded="true" signature="5098:5261" placeholder="..." />
-            <marker date="1421417238462" expanded="true" signature="5168:5250" placeholder="..." />
-          </folding>
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/install/jfun.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="190" max-vertical-offset="3021">
+          <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>
