@@ -1,10 +1,13 @@
 <?php
 require_once './jfun.php';
 
-$viewObj = View_Manager::create();
+$viewObj = View_Manager::create('view');
 $modelCol = $viewObj->getCol();
-//$modelDtl = $viewObj->getAll();
 $modelDtl = $viewObj->get('templatename');
+
+$htmlcontrolsObj = View_Manager::create('htmlcontrols');
+$htmlcontrolsDtl = $htmlcontrolsObj->getAll();
+$htmlcontrolsGroup = $htmlcontrolsObj->get('controlgroupname', '', '', '', 'controlgroupname');
 ?>
 <!DOCTYPE html>
 <head>
@@ -51,21 +54,20 @@ $modelDtl = $viewObj->get('templatename');
 //            gridster.disable();
 //                gridster.enable();
         }
-        function loadTemplate() {
-            $('#target').html($('#template').mustache({
-                name: "Luke"
-            }));
-        }
-        $(function () {
-            loadTemplate();
-            gridsterInit();
-            menuGroupInit();
-
-            $(".control-add").click(function () {
+        function controlAddInit() {
+            $(".j-control-add").click(function () {
                 var $this = $(this);
                 var controlhtml = $this.attr("data-controlhtml");
                 gridster.add_widget("<div>" + controlhtml + "</div>");
             });
+        }
+        $(function () {
+            //拖动控件初始化
+            gridsterInit();
+            //侧边栏控件初始化
+            menuGroupInit();
+            //元素生成控件初始化
+            controlAddInit();
         });
     </script>
     <style>
@@ -75,6 +77,7 @@ $modelDtl = $viewObj->get('templatename');
 
         .gridster div {
             border: 1px solid #000000;
+            overflow: auto;
         }
 
         .container {
@@ -91,17 +94,16 @@ $modelDtl = $viewObj->get('templatename');
             cursor: pointer;
         }
 
-        .control-add{
+        .j-control-add {
             cursor: pointer;
         }
     </style>
 </head>
 <body>
-<div id="target" class="container">Loading...</div>
-<script id="template" type="text/html">
+<div class="container">
     <div class="menu-group">
         <div class="menu-group-head" data-turnon="True">
-            视图列表{{name}}
+            视图列表
         </div>
         <div>
             <table>
@@ -123,26 +125,26 @@ $modelDtl = $viewObj->get('templatename');
             控件列表
         </div>
         <div>
-            <div class="menu-group">
-                <div class="menu-group-head" data-turnon="True">
-                    基本元素
+            <?php foreach ($htmlcontrolsGroup as $htmlcontrolsGroupVal) { ?>
+                <div class="menu-group">
+                    <div class="menu-group-head" data-turnon="True">
+                        <?= $htmlcontrolsGroupVal['controlgroupname'] ?>
+                    </div>
+                    <?php foreach ($htmlcontrolsDtl as $htmlcontrolsVal) {
+                        if ($htmlcontrolsGroupVal['controlgroupname'] == $htmlcontrolsVal['controlgroupname']) {
+                            ?>
+                            <div class="j-control-add"
+                                 data-controlhtml="<?= $htmlcontrolsVal['controlhtml'] ?>"><?= $htmlcontrolsVal['controlname'] ?>
+                            </div>
+                        <?php }
+                    } ?>
                 </div>
-                <div class="control-add" data-controlhtml="<input>">输入框
-                </div>
-                <div>c</div>
-                <div>d</div>
-            </div>
-            <div class="menu-group">
-                <div class="menu-group-head">
-                    aaaaa
-                </div>
-                <div>b</div>
-                <div>c</div>
-                <div>d</div>
-            </div>
+            <?php } ?>
         </div>
     </div>
-</script>
+</div>
+
+
 <div class="container">
     <div class="gridster">
         <div data-row="1" data-col="8" data-sizex="1" data-sizey="3">

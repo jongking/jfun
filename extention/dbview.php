@@ -9,6 +9,8 @@
 //界面的实现类
 class DbView extends DbFun
 {
+    private $viewName;
+
     public function getTemplate($templateName)
     {
         $result = $this->getOne('template', "templateName = '{$templateName}'");
@@ -20,13 +22,14 @@ class DbView extends DbFun
         }
     }
 
-    public function __construct($useNew = false)
+    public function __construct($viewName, $useNew = false)
     {
+        $this->viewName = $viewName;
         parent::__construct($useNew);
     }
 
     public function tableName()
     {
-        return 'v_view';
+        return 'v_'.$this->viewName;
     }
 }
