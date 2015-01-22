@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2015 年 01 月 16 日 14:10
+-- 生成日期: 2015 年 01 月 22 日 14:54
 -- 服务器版本: 5.5.19
 -- PHP 版本: 5.2.17
 
@@ -104,6 +104,32 @@ INSERT INTO `test` (`id`, `no`) VALUES
 -- --------------------------------------------------------
 
 --
+-- 表的结构 `v_htmlcontrolgroups`
+--
+
+CREATE TABLE IF NOT EXISTS `v_htmlcontrolgroups` (
+  `id` int(8) NOT NULL AUTO_INCREMENT,
+  `controlgroupno` varchar(100) NOT NULL,
+  `controlgroupname` varchar(100) NOT NULL,
+  `isturnon` int(1) NOT NULL DEFAULT '0',
+  `comment` varchar(4000) NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `controlgroupname` (`controlgroupname`),
+  UNIQUE KEY `controlgroupno` (`controlgroupno`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
+--
+-- 转存表中的数据 `v_htmlcontrolgroups`
+--
+
+INSERT INTO `v_htmlcontrolgroups` (`id`, `controlgroupno`, `controlgroupname`, `isturnon`, `comment`) VALUES
+(1, 'layout', '布局框', 1, ''),
+(2, 'basecell', '基本元素', 1, ''),
+(3, 'extendcell', '拓展元素', 0, '');
+
+-- --------------------------------------------------------
+
+--
 -- 表的结构 `v_htmlcontrols`
 --
 
@@ -112,17 +138,21 @@ CREATE TABLE IF NOT EXISTS `v_htmlcontrols` (
   `controlname` varchar(100) NOT NULL COMMENT '控件名',
   `controlhtml` varchar(4000) NOT NULL COMMENT '控件内容',
   `controlgroupname` varchar(100) NOT NULL COMMENT '控件组名',
+  `isgridster` int(1) NOT NULL DEFAULT '0',
+  `sizex` int(4) NOT NULL DEFAULT '0',
+  `sizey` int(4) NOT NULL DEFAULT '0',
   `comment` varchar(4000) NOT NULL COMMENT '控件注释',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='html控件表' AUTO_INCREMENT=3 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='html控件表' AUTO_INCREMENT=4 ;
 
 --
 -- 转存表中的数据 `v_htmlcontrols`
 --
 
-INSERT INTO `v_htmlcontrols` (`id`, `controlname`, `controlhtml`, `controlgroupname`, `comment`) VALUES
-(1, '输入框', '<input/>', '基本元素', '输入框'),
-(2, '两个输入框', '<input/><input/>', '高级组件', '两个输入框');
+INSERT INTO `v_htmlcontrols` (`id`, `controlname`, `controlhtml`, `controlgroupname`, `isgridster`, `sizex`, `sizey`, `comment`) VALUES
+(1, '输入框', '<input style="width:100%; height;100%;" />', '基本元素', 0, 2, 1, '输入框'),
+(2, '两个输入框', '<input/><input/>', '拓展元素', 0, 2, 2, '两个输入框'),
+(3, '基本布局框', '<div></div>', '布局框', 1, 10, 10, '可拖动放置控件区域');
 
 -- --------------------------------------------------------
 
