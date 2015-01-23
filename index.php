@@ -46,15 +46,19 @@ $htmlcontrolsGroup = $htmlcontrolsGroupObj->getAll();
             });
             $(".menu-group-head[data-turnon='True']").click();
         }
-//        var gridster;
         function gridsterInit() {
+            var windowWidth = 1000;
+            var widget_base_dimensionsW = 50;
+            var widget_base_dimensionsH = 50;
+            var max_cols = parseInt(windowWidth / widget_base_dimensionsW);
             $("#editDiv").gridster({    //通过jquery选择DOM实现gridster
                 widget_selector: 'div',
-                widget_base_dimensions: [50, 50],    //模块的宽高 [宽,高]
+                widget_base_dimensions: [widget_base_dimensionsW, widget_base_dimensionsH],    //模块的宽高 [宽,高]
                 widget_margins: [5, 5],    //模块的间距 [上下,左右]
+                max_cols:max_cols,
                 draggable : {handle : '.j-header-draggable'},
                 resize:{enabled: true}
-            }).data('gridster');
+            });
         }
         var StaticTicker = 0;
         function controlAddInit(fun) {
