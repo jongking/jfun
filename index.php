@@ -19,6 +19,7 @@ $htmlcontrolsGroup = $htmlcontrolsGroupObj->getAll();
     <meta name="keywords" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link href="./source/css/public.css" rel="stylesheet">
+    <link href="./source/css/font-awesome.css" rel="stylesheet">
     <link href="./source/css/jquery.gridster.css" rel="stylesheet">
     <script type="text/javascript" src="./source/js/jquery-1.7.2.js"></script>
     <script type="text/javascript" src="./source/js/mustache.js"></script>
@@ -48,13 +49,13 @@ $htmlcontrolsGroup = $htmlcontrolsGroupObj->getAll();
         }
         function gridsterInit() {
             var windowWidth = 1000;
-            var widget_base_dimensionsW = 50;
-            var widget_base_dimensionsH = 50;
+            var widget_base_dimensionsW = 25;
+            var widget_base_dimensionsH = 25;
             var max_cols = parseInt(windowWidth / widget_base_dimensionsW);
             $("#editDiv").gridster({    //通过jquery选择DOM实现gridster
                 widget_selector: 'div',
                 widget_base_dimensions: [widget_base_dimensionsW, widget_base_dimensionsH],    //模块的宽高 [宽,高]
-                widget_margins: [5, 5],    //模块的间距 [上下,左右]
+                widget_margins: [2, 2],    //模块的间距 [上下,左右]
                 max_cols:max_cols,
                 draggable : {handle : '.j-header-draggable'},
                 resize:{enabled: true}
@@ -160,11 +161,6 @@ $htmlcontrolsGroup = $htmlcontrolsGroupObj->getAll();
             border: 1px solid #000000;
         }
 
-        .container {
-            float: left;
-            border: 1px solid #000000;
-        }
-
         .menu-group {
             background-color: antiquewhite
         }
@@ -183,8 +179,6 @@ $htmlcontrolsGroup = $htmlcontrolsGroupObj->getAll();
             background: #ff4172;
         }
         .j-warpper{
-
-            padding: 2px;
         }
         .j-header{
             position: absolute;
@@ -209,64 +203,116 @@ $htmlcontrolsGroup = $htmlcontrolsGroupObj->getAll();
         .gridster-select{
             border: 1px solid #ff0000;
         }
+        .j-window-head{
+            background-color: #000000;
+            color: #ffffff;
+            width: 100%;
+            height: 32px;
+            white-space: nowrap;
+        }
+        .j-window-head > *{
+            font-size: 20px;
+            cursor: default;
+            vertical-align: middle;
+        }
+        .j-btn-default{
+            padding: 5px 10px 5px 10px;
+            background-color: #03e0b6;
+            font-size: 16px;
+            font-weight:bold;
+            border: 0;
+        }
+        .j-btn-default:hover{
+            opacity: 0.9;
+        }
+        .j-window-left{
+            background-color: rgb(204, 204, 204);
+            position: absolute;
+            width: 120px;
+            height: 100%;
+            bottom:0;
+        }
+        .j-window-middle{
+            background-color: rgba(204, 204, 204, 0.17);
+            position: absolute;
+            top: 0;
+            left: 120px;
+            right: 0;
+            bottom:0;
+        }
+        .j-window-body{
+            position: absolute;
+            top: 32px;
+            bottom: 0;
+            width: 100%;
+            padding: 0;
+        }
+        .j-window-body tr,td{
+            padding: 0;
+            margin: 0;
+        }
     </style>
 </head>
 <body>
-<div class="container">
-    <div class="menu-group">
-        <div class="menu-group-head" data-turnon="True">
-            视图列表
-        </div>
-        <div>
-            <table>
-                <tr>
-                    <td>tempatename</td>
-                </tr>
-                <?php foreach ($modelDtl as $valueDtl) { ?>
-                    <tr>
-                        <td>
-                            <a href="index.php?view=<?= $valueDtl['templatename'] ?>"><?= $valueDtl['templatename'] ?></a>
-                        </td>
-                    </tr>
-                <?php } ?>
-            </table>
-        </div>
-    </div>
-    <div class="menu-group">
-        <div class="menu-group-head" data-turnon="True">
-            控件列表
-        </div>
-        <div>
-            <?php foreach ($htmlcontrolsGroup as $htmlcontrolsGroupVal) { ?>
-                <div class="menu-group">
-                    <div class="menu-group-head" data-turnon="<?= $htmlcontrolsGroupVal['isturnon'] == '1'? 'True':'False' ?>">
-                        <?= $htmlcontrolsGroupVal['controlgroupname'] ?>
-                    </div>
-                    <?php foreach ($htmlcontrolsDtl as $htmlcontrolsVal) {
-                        if ($htmlcontrolsGroupVal['controlgroupname'] == $htmlcontrolsVal['controlgroupname']) {
-                            ?>
-                            <div class="j-control-add" data-j-controlid="<?= $htmlcontrolsVal['id'] ?>"
-                                 data-j-sizex="<?= $htmlcontrolsVal['sizex'] ?>" data-j-sizey="<?= $htmlcontrolsVal['sizey'] ?>"
-                                 data-j-isgridster="<?= $htmlcontrolsVal['isgridster'] ?>">
-                                <?= $htmlcontrolsVal['controlname'] ?>
-                                <div style="display: none;">
-                                    <?= $htmlcontrolsVal['controlhtml'] ?>
-                                </div>
-                            </div>
-                        <?php }
-                    } ?>
-                </div>
-            <?php } ?>
-
-        </div>
-        <div>
-            <input id="choButton" type="button" value="切换布局框"/>
-        </div>
-    </div>
+<div class="j-window-head">
+    <span class="fa fa-sellsy"></span><span>可视化布局</span>
+    <input class="j-btn-default" type="button" value="编辑"><input class="j-btn-default" type="button" value="布局编辑"><input class="j-btn-default" type="button" value="预览">
+    <input class="j-btn-default" type="button" value="下载"><input class="j-btn-default" type="button" value="保存"><input class="j-btn-default" type="button" value="清空">
 </div>
-
-<div id="editDiv" class="container gridster gridster-select" data-isgridster='1'>
-
+<div class="j-window-body">
+    <div class="j-window-left">
+        <div class="menu-group">
+            <div class="menu-group-head" data-turnon="True">
+                视图列表
+            </div>
+            <div>
+                <table>
+                    <tr>
+                        <td>tempatename</td>
+                    </tr>
+                    <?php foreach ($modelDtl as $valueDtl) { ?>
+                        <tr>
+                            <td>
+                                <a href="index.php?view=<?= $valueDtl['templatename'] ?>"><?= $valueDtl['templatename'] ?></a>
+                            </td>
+                        </tr>
+                    <?php } ?>
+                </table>
+            </div>
+        </div>
+        <div class="menu-group">
+            <div class="menu-group-head" data-turnon="True">
+                控件列表
+            </div>
+            <div>
+                <?php foreach ($htmlcontrolsGroup as $htmlcontrolsGroupVal) { ?>
+                    <div class="menu-group">
+                        <div class="menu-group-head" data-turnon="<?= $htmlcontrolsGroupVal['isturnon'] == '1'? 'True':'False' ?>">
+                            <?= $htmlcontrolsGroupVal['controlgroupname'] ?>
+                        </div>
+                        <?php foreach ($htmlcontrolsDtl as $htmlcontrolsVal) {
+                            if ($htmlcontrolsGroupVal['controlgroupname'] == $htmlcontrolsVal['controlgroupname']) {
+                                ?>
+                                <div class="j-control-add" data-j-controlid="<?= $htmlcontrolsVal['id'] ?>"
+                                     data-j-sizex="<?= $htmlcontrolsVal['sizex'] ?>" data-j-sizey="<?= $htmlcontrolsVal['sizey'] ?>"
+                                     data-j-isgridster="<?= $htmlcontrolsVal['isgridster'] ?>">
+                                    <?= $htmlcontrolsVal['controlname'] ?>
+                                    <div style="display: none;">
+                                        <?= $htmlcontrolsVal['controlhtml'] ?>
+                                    </div>
+                                </div>
+                            <?php }
+                        } ?>
+                    </div>
+                <?php } ?>
+            </div>
+            <div>
+                <input id="choButton" type="button" value="切换布局框"/>
+            </div>
+        </div>
+    </div>
+    <div id="editDiv" class="j-window-middle gridster gridster-select" data-isgridster='1'>
+    </div>
 </div>
 <!--<div class="container">-->
 <!--    <div class="gridster">-->
